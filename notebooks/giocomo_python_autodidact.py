@@ -276,8 +276,8 @@ def all_integers_match(*integers):
 
 def memory_locations_of_list_elements(*args):
     for stuff in zip(*args):
-        ids = (id(value) for value in stuff)
-        print(*ids, "<--", all_integers_match(ids))
+        ids = tuple(id(value) for value in stuff)
+        print(*ids, "<--", all_integers_match(*ids))
 
 
 # -
